@@ -1,0 +1,62 @@
+﻿@model MVC_Movie_Tai.Models.MovieGenreViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Movies List</h1>
+
+<p>
+    <a asp-action="Create">
+        <button type="button" class="btn btn-success">Create New</button>
+    </a>
+</p>
+<form asp-controller="Movies" asp-action="Index" method="get" class="row row-cols-lg-auto g-3 align-items-center">
+    <div class="col-12">
+        <select asp-for="MovieGenre" asp-items="Model.Genres" class="form-select" id="inlineFormSelectPref">
+            <option value="">All</option>
+        </select>
+    </div>
+    <div class="col-12">
+        <div class="input-group">
+
+            <input type="text" name="SearchString" class="form-control" id="inlineFormInputGroupUsername" placeholder="Title" />
+
+            <button type="submit" value="Filter" class="btn btn-primary">
+                Search
+            </button>
+        </div>
+    </div>
+</form>
+
+<div class="w-100 mt-4 d-flex flex-wrap ">
+    
+    @foreach (var item in Model.Movies!)
+    {
+        <div class="card mx-3 mb-4" style="width: 14rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@item.Title</h5>
+                <p class="card-text">
+                    <b>ReleaseDate: </b>@item.Title <br />
+                    <b>Genre: </b>@item.Genre <br />
+                    <b>Price: </b>@item.Price
+                </p>
+
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <a asp-action="Edit" asp-route-id="@item.Id">
+                        <button type="button" class="btn btn-danger">Edit</button>
+                    </a>
+                    <a asp-action="Details" asp-route-id="@item.Id">
+                        <button type="button" class="btn btn-warning">Details</button>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.Id">
+                        <button type="button" class="btn btn-success">Delete</button>
+                    </a>
+                </div>
+
+                
+            </div>
+        </div>
+    }
+</div>
