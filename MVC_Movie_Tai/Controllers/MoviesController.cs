@@ -86,6 +86,7 @@ namespace MVC_Movie_Tai.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title,ReleaseDate,Image,Genre,Price")] Movie movie)
         {
+           
             if (ModelState.IsValid)
             {
                 _db.Add(movie);

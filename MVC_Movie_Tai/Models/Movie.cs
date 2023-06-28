@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 
@@ -15,7 +16,10 @@ namespace MVC_Movie_Tai.Models
         [Display(Name = "Release Date")]
         [Required]
         public DateTime ReleaseDate { get; set; }
-        //public string? Image { get; set; }
+        //[DisplayName("Choose Image from your PC")]
+        //[NotMapped]
+        //[Required]
+        //public IFormFile? Image { get; set; }
         public string? Genre { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         [Required]
