@@ -11,3 +11,4 @@ Search movies by title
 ![image](https://github.com/taileduc0404/MyMovie/assets/133095004/7a488bef-8e71-4db1-9ff1-184cad234648)
 
 General search
+![image](https://github.com/taileduc0404/MyMovie/assets/133095004/9f0b83fc-973d-42aa-818a-4306fc89a74f)
